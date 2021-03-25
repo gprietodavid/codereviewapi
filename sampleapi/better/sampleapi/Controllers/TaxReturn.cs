@@ -7,11 +7,13 @@ using Microsoft.Extensions.Logging;
 using sampleapi.helpers;
 using sampleapi.interfaces;
 using sampleapi.models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace sampleapi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class TaxReturn : ControllerBase
     {
         private readonly IQueryService _queryService;
