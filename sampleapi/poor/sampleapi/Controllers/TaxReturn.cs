@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using sampleapi.helpers;
@@ -31,7 +32,7 @@ namespace sampleapi.Controllers
             notify.PostMessage("do something");
             return Accepted();
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<SampleResponse> GetSamples()
         {
